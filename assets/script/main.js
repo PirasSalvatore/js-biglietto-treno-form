@@ -1,8 +1,16 @@
-// user data
+// user form data
 
+const formEl = document.querySelector('#userData');
 const userDistance = document.querySelector('#distance');
 const userAge = document.querySelector('#age');
-const btnEL = document.querySelector('button')
+const btnEL = document.querySelector('#confirms');
+const usaerName = document.querySelector('#name');
+
+// card selections
+const cardUserName = document.querySelector('#userName');
+const cardUserAge = document.querySelector('#userAge');
+const cardUserPrice = document.querySelector('#userPrice');
+
 
 // declarection variable 
 const discountJuvenile = 0.2;
@@ -13,8 +21,11 @@ let userPrice = 0;
 // add event to click for confirm user data
 btnEL.addEventListener('click', function () {
     userPrice = priceCalculator(priceForKm, userDistance.value, userAge.value, discountJuvenile, discountSenior);
+    // console.log(userDistance.value, userAge.value, userPrice);
 
-    console.log(userDistance.value, userAge.value, userPrice);
+    cardUserName.innerText = usaerName.value
+    cardUserAge.innerHTML = `${userAge.value} years old`
+    cardUserPrice.innerHTML = `price ticket : ${userPrice}&euro;`
 
 })
 
